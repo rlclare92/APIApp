@@ -1,0 +1,24 @@
+<div class="weatherSelection">
+<h1> Weather Data</h1>
+
+{{!-- 
+
+key value 
+this is the value under the key  --}}
+<ul>
+{{#each weatherData}}
+    <li>{{@key: }} : {{this}}</li>
+{{/each}}
+</ul>
+<img class="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icons">
+
+<form action="/" method="POST">
+    <label for="city">City: </label>
+    <input type="text" name="city">
+    <br>
+    <label for="countryCode">CC: </label>
+    <input type="text" name="countryCode">
+     <br>
+    <input type="submit" value="send">
+</form>
+</div>
