@@ -52,9 +52,15 @@ router.get('/catFacts', async (req,res) => {
 
 router.get('/marvelcomics', async (req,res) => {
 
+    let data= await getMarvel.getmarvelComics()
+
+    data = JSON.parse((data));
+    console.log(data);
+
     res.render('./marvelcomics.hbs', {
-        
-        display: ` Opps... something went wrong, come back later` 
+        data,
+        title: `${title}`
+        // display: ` Opps... something went wrong, come back later` 
     })
 });
 
