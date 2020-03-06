@@ -13,7 +13,7 @@ router.get('/harrypotter', async (req, res) => {
     // console.log(data);
     res.render('./harrypotter', {
         data,
-        title: ` you have been randomly sorted into : ${data}`
+        title: `Better be... ${data}`
     })
     
 })
@@ -35,20 +35,28 @@ router.get('/getChuckNorris', async (req, res) => {
     
 })
 
-router.get('/catFacts', async (req,res) =>{
+router.get('/catFacts', async (req,res) => {
     let data = await getWeather.getCatFacts()
 
-    data = JSON.parse(JSON.stringify(data));
+    data = JSON.parse((data));
     // console.log(data);
 
-    console.log(data.text);
-    let fact = data.text
+    console.log(data.all[0].text);
+    let fact = data.all[0].text
     res.render('./catFacts',{
         data,
-        fact: `cat fact: ${fact}` 
+        fact: `${fact}` 
     })
     
 })
+
+router.get('/marvelcomics', async (req,res) => {
+
+    res.render('./marvelcomics.hbs', {
+        
+        display: ` Opps... something went wrong, come back later` 
+    })
+});
 
 router.post('/', async (req, res) => {
     let city = req.body.city;

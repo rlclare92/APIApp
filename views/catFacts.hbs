@@ -1,12 +1,19 @@
-{{fact}}
 
+<div class="catPage">
 <ul>
 {{#each catFactObject}}
     <li>{{@key: }} : {{this}}</li>
 {{/each}}
 </ul> 
-{{!-- 
-<form action="/catFacts" method="POST">
+
+<div class="catPageText"> 
+    <h1>Cat Fact</h1>
+{{fact}}
+</div>
+
+{{!-- <form action="/catFacts" method="POST">
     <input type="submit" value="send">
 </form>
 </div> --}}
+
+</div>
